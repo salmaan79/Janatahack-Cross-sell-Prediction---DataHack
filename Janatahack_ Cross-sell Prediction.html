@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#ProblemStatement -->
+<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><style type="text/css" id="dark-mode-custom-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    
+    <title> Janatahack: Cross-sell Prediction </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript" src="./Janatahack_ Cross-sell Prediction_files/NRJS-5c943acaa569b3bf257"></script><script src="./Janatahack_ Cross-sell Prediction_files/nr-1177.min.js.download"></script><script type="text/javascript" id="sendinblue-js" async="" src="./Janatahack_ Cross-sell Prediction_files/sa.js.download"></script><script type="text/javascript" async="" src="./Janatahack_ Cross-sell Prediction_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Janatahack_ Cross-sell Prediction_files/js"></script><script type="text/javascript" async="" src="./Janatahack_ Cross-sell Prediction_files/analytics.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgEDVVdaCxAEVFRUAgQFVg==",licenseKey:"NRJS-5c943acaa569b3bf257",applicationID:"40565520"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(22),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(23),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(23),a=t(22);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(19),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(22),c=t(23),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(21),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],19:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],20:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],21:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],22:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],23:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],24:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&&t(n,r,i);for(var a=e(i),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||i(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function o(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(22),u={},d={},l=e.exports=i();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+b.offset],null,"api"),s("timing",["load",n]);var r=p.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===p.readyState&&o()}function o(){s("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-b.offset}var c=(new Date).getTime(),s=t("handle"),f=t(22),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:c,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",o,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",i),l[m]("onload",r)),s("mark",["firstbyte",c],null,"api");var E=0,R=t(24)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var i=t("ee"),o=t(23),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,i],c])}u(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,i,o){i||(i="");var a,c,s,f="-"===i.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+i:i,o,c))}function u(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&&(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.eu01.nr-data.net","errorBeacon":"bam.eu01.nr-data.net","licenseKey":"NRJS-5c943acaa569b3bf257","applicationID":"40565520","transactionName":"MhBSZQoZXRIHWkAICQtadkQWG0cICVcbFQkQB15UAVZQDghNURISSwNZVA8LCQIJV0AEFREqQF0ZAVQTCUxaBQ==","queueTime":0,"applicationTime":126,"agent":""}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Janatahack: Cross-sell Prediction | None">
+    <meta name="author" content="">
+    <meta property="og:url" content="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content=" Janatahack: Cross-sell Prediction | None">
+    <meta property="og:image" content=" https://datahack-prod.s3.ap-south-1.amazonaws.com/__sized__/og_image/og_5-thumbnail-600x600.png ">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+
+   <!-- STYLESHEET -->
+    
+      <link rel="apple-touch-icon" type="image/png" href="https://s3.amazonaws.com/thinkific-import/118220/tZG5CRjcSHKs3XQW7eV8_Logo-Square.png">
+      <link rel="icon" type="image/png" href="https://s3.amazonaws.com/thinkific-import/118220/tZG5CRjcSHKs3XQW7eV8_Logo-Square.png">
+      <link rel="stylesheet" href="./Janatahack_ Cross-sell Prediction_files/all.min.css" integrity="sha256-BtbhCIbtfeVWGsqxk1vOHEYXS6qcvQvLMZqjtpWUEx8=" crossorigin="anonymous">
+      <link rel="stylesheet" href="./Janatahack_ Cross-sell Prediction_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="./Janatahack_ Cross-sell Prediction_files/css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="./Janatahack_ Cross-sell Prediction_files/slick.css">
+      <link rel="stylesheet" type="text/css" href="./Janatahack_ Cross-sell Prediction_files/slick-theme.min.css">
+    
+
+    <link rel="stylesheet" href="./Janatahack_ Cross-sell Prediction_files/base.eb48c6b11d18.246e5f500879.css" type="text/css"><link rel="stylesheet" href="./Janatahack_ Cross-sell Prediction_files/rrssb.61a43e182636.47d0ad004466.css" type="text/css">
+    <script src="./Janatahack_ Cross-sell Prediction_files/jquery-3.1.1.min.js.download"></script>
+    <script src="./Janatahack_ Cross-sell Prediction_files/html2canvas.js.download"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script> -->
+<script type="text/javascript" src="./Janatahack_ Cross-sell Prediction_files/output.72100ff36c38.js.download"></script><script type="application/javascript" src="./Janatahack_ Cross-sell Prediction_files/main.js.download"></script><style>@import "https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700";.d-none{display:none}.d-block{display:block}.d-flex{display:-ms-flexbox!important;display:-webkit-box!important;display:flex!important}.truepush_optin_notifications{font-family:"Nunito Sans", sans-serif!important;border:none!important;font-size:14px;color:#000;margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box}.truepush_optin_notifications .text-center{text-align:center!important}.truepush_optin_notifications .text-right{text-align:right!important}.truepush_optin_notifications .text-left{text-align:left!important}.truepush_optin_notifications .justify-content-center{-ms-flex-pack:center!important;-webkit-box-pack:center!important;justify-content:center!important}.truepush_optin_notifications .justify-content-start{-ms-flex-pack:start!important;-webkit-box-pack:start!important;justify-content:flex-start!important}.truepush_optin_notifications .justify-content-end{-ms-flex-pack:end!important;-webkit-box-pack:end!important;justify-content:flex-end!important}.truepush_optin_notifications .color-primary{color:#4a90e2}.truepush_optin_notifications .color-link{color:#4a90e2}.truepush_optin_notifications .p-rel{position:relative}.truepush_optin_notifications .p-abs{position:absolute}.truepush_optin_notifications .m-1{margin:6px!important}.truepush_optin_notifications .m-2{margin:12px!important}.truepush_optin_notifications .m-3{margin:18px!important}.truepush_optin_notifications .m-4{margin:24px!important}.truepush_optin_notifications .m-5{margin:30px!important}.truepush_optin_notifications .mx-1{margin-left:6px!important;margin-right:6px!important}.truepush_optin_notifications .mx-2{margin-left:12px!important;margin-right:12px!important}.truepush_optin_notifications .mx-3{margin-left:18px!important;margin-right:18px!important}.truepush_optin_notifications .mx-4{margin-left:24px!important;margin-right:24px!important}.truepush_optin_notifications .mx-5{margin-left:30px!important;margin-right:30px!important}.truepush_optin_notifications .my-1{margin-top:6px!important;margin-bottom:6px!important}.truepush_optin_notifications .my-2{margin-top:12px!important;margin-bottom:12px!important}.truepush_optin_notifications .my-3{margin-top:18px!important;margin-bottom:18px!important}.truepush_optin_notifications .my-4{margin-top:24px!important;margin-bottom:24px!important}.truepush_optin_notifications .my-5{margin-top:30px!important;margin-bottom:30px!important}.truepush_optin_notifications .mt-1{margin-top:6px!important}.truepush_optin_notifications .mt-2{margin-top:12px!important}.truepush_optin_notifications .mt3{margin-top:18px!important}.truepush_optin_notifications .mt-4{margin-top:24px!important}.truepush_optin_notifications .mt-5{margin-top:30px!important}.truepush_optin_notifications .mb-1{margin-bottom:6px!important}.truepush_optin_notifications .mb-2{margin-bottom:12px!important}.truepush_optin_notifications .mb-3{margin-bottom:18px!important}.truepush_optin_notifications .mb-4{margin-bottom:24px!important}.truepush_optin_notifications .mb-5{margin-bottom:30px!important}.truepush_optin_notifications .ml-1{margin-left:6px!important}.truepush_optin_notifications .ml-2{margin-left:12px!important}.truepush_optin_notifications .ml-3{margin-left:18px!important}.truepush_optin_notifications .ml-4{margin-left:24px!important}.truepush_optin_notifications .ml-5{margin-left:30px!important}.truepush_optin_notifications .mr-1{margin-right:6px!important}.truepush_optin_notifications .mr-2{margin-right:12px!important}.truepush_optin_notifications .mr-3{margin-right:18px!important}.truepush_optin_notifications .mr-4{margin-right:24px!important}.truepush_optin_notifications .mr-5{margin-right:30px!important}.truepush_optin_notifications .p-1{padding:6px!important}.truepush_optin_notifications .p-2{padding:12px!important}.truepush_optin_notifications .p-3{padding:18px!important}.truepush_optin_notifications .p-4{padding:24px!important}.truepush_optin_notifications .p-5{padding:30px!important}.truepush_optin_notifications .px-1{padding-left:6px!important;padding-right:6px!important}.truepush_optin_notifications .px-2{padding-left:12px!important;padding-right:12px!important}.truepush_optin_notifications .px-3{padding-left:18px!important;padding-right:18px!important}.truepush_optin_notifications .px-4{padding-left:24px!important;padding-right:24px!important}.truepush_optin_notifications .px-5{padding-left:30px!important;padding-right:30px!important}.truepush_optin_notifications .py-1{padding-top:6px!important;padding-bottom:6px!important}.truepush_optin_notifications .py-2{padding-top:12px!important;padding-bottom:12px!important}.truepush_optin_notifications .py-3{padding-top:18px!important;padding-bottom:18px!important}.truepush_optin_notifications .py-4{padding-top:24px!important;padding-bottom:24px!important}.truepush_optin_notifications .py-5{padding-top:30px!important;padding-bottom:30px!important}.truepush_optin_notifications .pt-1{padding-top:6px!important}.truepush_optin_notifications .pt-2{padding-top:12px!important}.truepush_optin_notifications .pt-3{padding-top:18px!important}.truepush_optin_notifications .pt-4{padding-top:24px!important}.truepush_optin_notifications .pt-5{padding-top:30px!important}.truepush_optin_notifications .pb-1{padding-bottom:6px!important}.truepush_optin_notifications .pb-2{padding-bottom:12px!important}.truepush_optin_notifications .pb-3{padding-bottom:18px!important}.truepush_optin_notifications .pb-4{padding-bottom:24px!important}.truepush_optin_notifications .pb-5{padding-bottom:30px!important}.truepush_optin_notifications .pl-1{padding-left:6px!important}.truepush_optin_notifications .pl-2{padding-left:12px!important}.truepush_optin_notifications .pl-3{padding-left:18px!important}.truepush_optin_notifications .pl-4{padding-left:24px!important}.truepush_optin_notifications .pl-5{padding-left:30px!important}.truepush_optin_notifications .pr-1{padding-right:6px!important}.truepush_optin_notifications .pr-2{padding-right:12px!important}.truepush_optin_notifications .pr-3{padding-right:18px!important}.truepush_optin_notifications .pr-4{padding-right:24px!important}.truepush_optin_notifications .pr-5{padding-right:30px!important}.truepush_optin_notifications .xy-m{position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.truepush_optin_notifications .y-m{position:absolute;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.truepush_optin_notifications .x-m{position:absolute;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.truepush_optin_notifications .truepush_overlay{width:100%;height:100%;position:fixed;background:#000;background-color:rgba(0, 0, 0, 0.3);z-index:999999;left:0;right:0;margin:auto;top:0;overflow:hidden}.truepush_optin_notifications .defaultplus_truepush{width:800px;height:220px;position:fixed;top:0;left:0;z-index:9999999999999999}.truepush_optin_notifications .defaultplus_truepush:after{content:"";width:100%;height:100%;position:absolute;left:50%;top:50%;-webkit-filter:blur(80px);filter:blur(80px);background-color:rgba(0, 0, 0, 0.4);-webkit-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%)}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp{position:relative;z-index:99999999}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp .defaultplus_content_tp{position:absolute;top:20px;right:120px}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp .defaultplus_content_tp a{color:#fff!important;cursor:pointer!important;font-size:14px;font-weight:800;text-decoration:none!important;background:none;margin:0;padding:0;text-shadow:2px 2px 8px #7c7c7c;font-family:"Nunito Sans", sans-serif!important}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp .defaultplus_content_tp a:hover{text-decoration:underline!important}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp .defaultplus_content_tp a img{vertical-align:middle;margin:0 2px;width:18px}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp .defaultplus_content_tp span{color:#fff!important;text-decoration:underline!important}.truepush_optin_notifications .moz_defaultplus_truepush{width:960px}.truepush_optin_notifications .moz_defaultplus_truepush .defaultplus_content_tp{right:60px}.truepush_optin_notifications .opera_defaultplus_truepush .defaultplus_content_tp{right:160px}.truepush_optin_notifications .edge_defaultplus_truepush{width:100%!important;height:120px!important;bottom:0!important;left:0!important;top:auto}.truepush_optin_notifications .edge_defaultplus_truepush .defaultplus_content_tp{top:22px!important;left:22%!important}.truepush_optin_notifications .belloptin_truepush{position:fixed;right:25px;bottom:30px;z-index:999999999999!important;padding:2px;cursor:pointer}.truepush_optin_notifications .belloptin_truepush .bellcircle_optinicon{display:flex!important;display:-webkit-box!important;display:-ms-flexbox!important;-ms-flex-pack:center!important;justify-content:center!important;-ms-flex-align:center!important;align-items:center!important;text-align:center!important;-webkit-box-align:center!important;-webkit-box-pack:center!important;width:50px;height:50px;border-radius:50%;background:red;margin:0;padding:0}.truepush_optin_notifications .belloptin_truepush .bellcircle_optinicon svg{width:36px;height:36px;fill:#fff;vertical-align:sub;text-align:center;margin:0;padding:0}.truepush_optin_notifications .belloptin_truepush .tip-content{position:absolute;top:6px;right:9999px;width:200px;margin-right:83px;padding:10px;color:#fff;background:#333;-webkit-box-sizing:unset!important;box-sizing:unset!important;-webkit-box-shadow:2px 2px 5px #aaa;-moz-box-shadow:2px 2px 5px #aaa;box-shadow:2px 2px 5px #aaa;opacity:0;-webkit-transition:opacity 250ms ease-out;-moz-transition:opacity 250ms ease-out;-ms-transition:opacity 250ms ease-out;-o-transition:opacity 250ms ease-out;transition:opacity 250ms ease-out}.truepush_optin_notifications .belloptin_truepush .tip-content:before{content:"";position:absolute;top:50%;width:0;height:0;margin-left:184px;margin-top:-11px;border:10px solid transparent;border-left-color:#333}.truepush_optin_notifications .belloptin_truepush .bellcircle_optinicon:hover .tip-content{right:-20px;opacity:1}.truepush_optin_notifications .horizontalbar_truepush{position:fixed;bottom:0;width:100%;left:0;right:0;margin:0 auto;z-index:9999999}.truepush_optin_notifications .horizontalbar_truepush .bar_truepush{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:10px;background:#000;color:#fff}.truepush_optin_notifications .horizontalbar_truepush .bar_truepush .optinbar_content span{font-size:16px}.truepush_optin_notifications .horizontalbar_truepush .bar_truepush .optinbar_content button{display:inline!important;background-color:#4A90E2;color:#fff;border-width:0!important;padding:8px 12px!important;font-size:14px!important;font-weight:500;border:0;border-radius:2px;margin:0 auto!important;text-transform:none!important;font-family:"Nunito Sans", sans-serif!important}.truepush_optin_notifications .horizontalbar_truepush .bar_truepush .optinbar_content b{font-size:16px;cursor:pointer}.truepush_optin_notifications .optinbox_truepush{font-family:"Nunito Sans", sans-serif!important;position:fixed;top:0;margin:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);z-index:999999999999!important;text-align:center;width:100%;max-width:360px;height:-webkit-max-content;height:-moz-max-content;height:max-content;background:#ffffff;border:1px solid #f0f0f0;margin:0 auto}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection{padding:12px 10px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection h5{font-size:16px!important;font-weight:600;color:#282828!important;margin:0;line-height:1.4;text-transform:unset!important}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection p{font-size:13px;color:#7c7c7c;margin:12px 0;font-weight:500;padding:0;line-height:1.4}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection .optinbox_tpbuttons{text-align:center!important}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection .optinbox_tpbuttons button{padding:8px 26px;font-size:14px!important;font-weight:500;margin:6px;border-radius:2px;text-transform:unset!important;line-height:normal!important;letter-spacing:unset!important;font-family:"Nunito Sans", sans-serif!important}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection .optinbox_tpbuttons .tp_btn_default{background:#f2f4ff;border:1px solid #ebeefc;-webkit-box-shadow:0 0 8px 0 white;box-shadow:0 0 8px 0 white;color:#3b69ff;margin-left:0}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection .optinbox_tpbuttons .tp_btn_primary{background:#3b69ff;color:#fff;border:1px solid #3b69ff;-webkit-box-shadow:0 0 6px 0 #c0cfff;box-shadow:0 0 6px 0 #c0cfff}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection .optinbox_tpbuttons a{text-decoration:underline!important;cursor:pointer!important;font-size:12px;font-weight:500;padding:0;margin:0;color:#7c7c7c!important;font-family:"Nunito Sans", sans-serif!important}.truepush_optin_notifications .optinbox_plus_truepush{width:100%;max-width:350px;height:-webkit-max-content;height:-moz-max-content;height:max-content;margin:0 auto;background:#ffffff;border:1px solid #f0f0f0}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection{padding:10px}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_plus_media{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-align:start;-webkit-box-align:start;align-items:flex-start;text-align:left}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_plus_media .optinbox_plus_image{flex:0 0 60px;-webkit-box-flex:0;-ms-flex:0 0 60px;height:60px;margin-right:16px;overflow:hidden}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_plus_media .optinbox_plus_image img{max-width:100%;width:100%;border-radius:2px}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_plus_media .optinbox_plus_media_body{-ms-flex:1;-webkit-box-flex:1;flex:1}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_plus_media .optinbox_plus_media_body p{margin:0;font-size:15px;color:#484848;line-height:1.4;font-weight:600;font-family:"Nunito Sans", sans-serif!important;word-break:break-word}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_plus_media .optinbox_plus_media_body .subtext{font-size:13px!important;color:#686868!important;font-weight:400!important;padding-top:3px;font-family:"Nunito Sans", sans-serif!important;word-break:break-word}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_tpbuttons button{padding:8px 26px;font-size:14px;font-weight:500;margin:5px;border-radius:2px;font-family:"Nunito Sans", sans-serif!important}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_tpbuttons .tp_btn_default{background:#f2f4ff;border:1px solid #ebeefc;-webkit-box-shadow:0 0 8px 0 white;box-shadow:0 0 8px 0 white;color:#3b69ff;margin-left:0}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_tpbuttons .tp_btn_primary{background:#3b69ff;color:#fff;border:1px solid #3b69ff;-webkit-box-shadow:0 0 6px 0 #c0cfff;box-shadow:0 0 6px 0 #c0cfff}.truepush_optin_notifications .optinbox_plus_truepush .optinbox_plus_tpsection .optinbox_tpbuttons a{text-decoration:underline!important;cursor:pointer!important;font-size:12px;font-weight:500;padding:0;margin:0;color:#7c7c7c;font-family:"Nunito Sans", sans-serif!important}iframe{border:0;background:none;-webkit-box-shadow:none;box-shadow:none}.iframe_optinbell_tp{width:62px;height:62px;position:fixed;bottom:20px;right:30px;z-index:999999999}.iframe_optin_notifications .belloptin_truepush{right:50%!important;bottom:50%!important;-webkit-transform:translateX(50%) translateY(-50%);-ms-transform:translateX(50%) translateY(-50%);transform:translateX(50%) translateY(50%)}.iframe_optinbar_tp{position:fixed;width:100%;bottom:0;left:0;right:0;margin:0 auto;height:50px;z-index:9999999}.iframe_optinbox_tp{position:fixed;max-width:400px;width:100%;padding:0 5px;height:180px;top:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);z-index:9999999}.optinbox_truepush_iframe{width:100%}.iframe_optinboxplus_tp{max-width:400px;width:100%;top:0;height:160px;position:fixed;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);z-index:9999999}.optinboxplus_truepush_iframe{width:100%}.iframe_optin_notifications .optinbox_truepush_iframe{top:0!important;bottom:auto!important}.iframe_optin_notifications .optinboxplus_truepush_iframe{top:0!important;bottom:auto!important}@media screen and (max-width:574.98px){.truepush_optin_notifications .defaultplus_truepush{width:100%;height:auto;bottom:0;top:auto;left:0}.truepush_optin_notifications .defaultplus_truepush .defaultplus_box_tp .defaultplus_content_tp{top:auto;left:40%;bottom:20px;-webkit-transform:translateX(-40%);-ms-transform:translateX(-40%);transform:translateX(-40%);right:auto}.truepush_optin_notifications .horizontalbar_truepush .bar_truepush .optinbar_content span{display:block;padding:0 0 12px 0!important}.truepush_optin_notifications .optinbox_truepush{top:auto;bottom:0}.iframe_optinbox_tp{top:auto;bottom:0;max-width:360px}.iframe_optinboxplus_tp{top:auto;bottom:0;max-width:360px}}@media screen and (max-width:398.98px){.truepush_optin_notifications .optinbox_truepush{max-width:98%}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection{padding:12px 8px}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection h5{font-size:14px;font-weight:600}.truepush_optin_notifications .optinbox_truepush .optinbox_tpsection p{font-size:12px}.iframe_optin_notifications .optinbox_truepush_iframe{top:auto!important;bottom:0!important}.iframe_optin_notifications .optinboxplus_truepush_iframe{top:auto!important;bottom:0!important}}</style></head>
+
+<body class=" pages  contest-playground ">
+<div class="black-rbga" style="display:none;"></div>
+
+
+  <div id="announcements">
+  <div class="container">
+      <div class="row">
+          <p class="d-table mx-auto">
+            
+              
+                <a href="https://courses.analyticsvidhya.com/bundles/certified-business-analytics-program?utm_source=datahack&amp;utm_medium=flashstrip&amp;utm_campaign=CBAP_Sept" target="_blank">
+                  <span>[MEGA PRICE DROP] Get Certified in Business Analytics with 12+ Projects, 1:1 Mentorship | Offer Ending Soon</span> 
+                </a>
+              
+            
+          </p>
+      </div>
+  </div>
+</div>
+
+
+
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-white">
+    <div class="container">
+		  <a class="navbar-brand" href="https://datahack.analyticsvidhya.com/">
+		  	<img class="logo" src="./Janatahack_ Cross-sell Prediction_files/av-logo-svg.svg" alt="Analytics Vidhya">
+		  </a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <i class="mobile-menu-iocn"></i>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+          <li class="nav-item mr-4">
+                <a href="https://www.analyticsvidhya.com/blog/" class="nav-link">Blog</a>
+              </li>
+              <li class="nav-item mr-4">
+                <a href="https://courses.analyticsvidhya.com/" class="nav-link">Courses</a>
+              </li>
+              <li class="nav-item mr-4">
+                <a href="https://datahack.analyticsvidhya.com/contest/all" class="nav-link">Hackathons</a>
+              </li>
+              <li class="nav-item mr-4">
+                <a href="https://datahack.analyticsvidhya.com/top-competitor" class="nav-link text-danger">User Rankings</a>
+              </li>
+              <!-- <li class="nav-item mr-2">
+                <a href="https://www.analyticsvidhya.com/corporate/index.php#get_in_touch" class="nav-link text-danger"
+                  >Organize a Hackathon</a>
+              </li> -->
+              <li class="nav-item mr-2">
+                <a href="https://datahack.analyticsvidhya.com/approach/top-approaches/" target="_blank" class="nav-link text-danger">Top Approaches</a>
+              </li>
+            </ul>
+		    <div class="form-inline my-2 my-lg-0">
+          <ul class="nav">
+            <li class="nav-item av-search-icon">
+              <i class="fas fa-search" aria-hidden="true" id="sbtn-id"></i>
+            </li>
+            
+            <!-- Notification -->
+              <li class="nav-item av-notofication">
+                
+                <script src="./Janatahack_ Cross-sell Prediction_files/notify.a77b5d2fdd2d.js.download" type="text/javascript"></script>
+                  <script>
+        notify_badge_id='live_notify_badge';
+        notify_menu_id='live_notify_list';
+        notify_api_url='/notifications/api/unread_count/';
+        notify_fetch_count='5';
+        notify_unread_url='/notifications/unread/';
+        notify_mark_all_unread_url='/notifications/mark-all-as-read/';
+        notify_refresh_period=600000;
+    register_notifier(fill_notification_list);register_notifier(fill_notification_badge);</script>
+                  <a href="https://datahack.analyticsvidhya.com/notifications/unread">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge badge-pill badge-danger" id="notification_count"><span id="live_notify_badge" class="">6</span></span>
+                  </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="palceholder">
+                    
+                    <span>S</span>
+                    
+                  </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="left: -88px !important;">
+                  <a class="dropdown-item" href="https://datahack.analyticsvidhya.com/user">My Profile</a>
+                  <a class="dropdown-item" href="https://profile.analyticsvidhya.com/accounts/profile/">Edit Profile</a>
+                  <a class="dropdown-item" href="javascript:{}" onclick="document.getElementById(&#39;logout-form&#39;).submit(); return false;">Logout</a>
+                </div>
+              </li>
+          
+          </ul>
+        </div>
+		  </div>
+    </div>
+    </nav>
+
+</header>
+<div class="av-modal-full-screen" id="searchlink">
+  <button type="button" class="close" id="close" aria-label="Close"><span>esc</span></button>
+  <div class="modalform">
+    <form id="search">
+      <div class="form-group">
+          <input type="text" class="form-control" autocomplete="off" id="search-contest-input-id" placeholder="Keyword">
+          <button type="submit" class="btn btn-default" id="sbtn"><i class="fas fa-search" aria-hidden="true"></i></button>
+          <div id="search_contest_id"></div>
+        </div>
+    </form>
+  </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Janatahack_ Cross-sell Prediction_files/js(1)"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Janatahack_ Cross-sell Prediction_files/js(2)"></script>
+<script>
+
+  var notification = new WebSocket(((window.location.protocol === 'https:') ? 'wss://' : 'ws://')+window.location.host+'/ws/notification/')
+  notification.onmessage = function(e){
+    console.log("new notification recieved");
+     $.ajax({
+    url: "/notifications/api/unread_count/",
+    dataType: 'json',
+    type: "GET",
+    success: function(data) {
+      $('#notification_count').html(data.unread_count)
+    },
+    error: function(err) {
+      console.log(err)
+    }
+    });
+    console.log(window.location.pathname == "/notifications/unread/")
+    if(window.location.pathname == "/notifications/unread/") {
+      console.log("inside pathname")
+      ("/notifications/unread/");
+    }
+  }
+
+  ///new ga
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134860392-1');
+
+  //old ga
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-67190105-1');
+
+</script>
+<script>
+$(document).ready(function() {
+  $("#search_contest_id p").remove();
+  var index = -1;
+   $('#search-contest-input-id').keydown(function(e) {
+    var pressed=false;
+    if($('#search-contest-input-id').val()==''){
+      index = -1;
+      $("#search_contest_id p").remove();
+      $(this).removeClass('focus-active');
+    }
+    if(event.keyCode==38){
+    // if up arrow key is pressed then decrease the index value.
+      index = index - 1;
+      if(index<0){
+        //if handles the overflow
+        index=0
+      }
+      pressed=true
+    }
+    else if(event.keyCode==40){
+      //if down arrow key is pressed then increase the index value.
+      index = index + 1
+
+      if(index > $('#search_contest_id p').length-1){
+        // it handles the overflow
+        index=0
+      }
+      pressed=true
+    }
+    if(pressed==true){
+      /* if any arrow key is pressed then set the value of
+        that p to the input box... focus is handelled by 'active-search' class
+      */
+      $('#search_contest_id p').removeClass('active-search')
+      $('#search_contest_id p').eq(index).addClass('active-search')
+      $('#search-contest-input-id').val($('#search_contest_id p').eq(index).text())
+    }
+    if(event.keyCode==9){
+      // if tab is pressed then close the dropdown
+      index = -1
+      $('#search_contest_id p').remove()
+      $('#search-contest-input-id').removeClass('focus-active');
+    }
+  });
+
+  $('#search-contest-input-id').keyup(function(e) {
+    /*when ever any key is pressed this event got fired*/
+    if($('#search-contest-input-id').val()==''){
+      //if the input tag is empty then remove the focus form it and do not open the suggestor
+      $("#search_contest_id p").remove();
+      $(this).removeClass('focus-active');
+    }
+    var contest_name = $(this).val();
+    // no ajax for space(32), backspace(8), delete, down-arrow,up-arrow
+    if(contest_name.length > 0 && event.keyCode != 40 && event.keyCode != 38 && event.keyCode != 32 && event.keyCode !=8){
+      $.ajax({
+        type: "POST",
+        url: "/contest/searched-contest",
+        data: {'contest_name': contest_name},
+        success:function(response){
+          $("#search_contest_id").empty();
+          var len = response['contests'].length
+          if (len==0){
+            // if length is 0 then close the dropdown css
+            $('#search-contest-input-id').removeClass('focus-active');
+          }
+          else if(len!=0 && event.keyCode==8){
+            //if length not equal to 0 and backspace is pressed
+            $('#search-contest-input-id').addClass('focus-active');
+
+          }
+          else{
+            $('#search-contest-input-id').addClass('focus-active');
+            $('#search-contest-input-id').focus();
+            // $('#search_contest_id').css('width', '50%');
+
+
+          }
+          for (var i=0;i<response['contests'].length;i++){
+            $("<p>"+response['contests'][i]+"</p>").appendTo("#search_contest_id");
+          }
+          $("#search_contest_id p").bind("click",function(){
+            $("#search-contest-input-id").val($(this).text()).focus()
+            $("#search_contest_id").empty();
+            $('#search-contest-input-id').removeClass('focus-active');
+          });
+        }
+      });
+      if(event.keyCode==13) {
+        $('#sbtn').click();
+      }
+    }
+  });
+  $("#sbtn").on("click", function(e){
+    var search = $("#search-contest-input-id").val();
+    var data = {'contest_name': search};
+    $.ajax({
+        type: "POST",
+        url: "/contest/contest-slug",
+        data: data,
+        success:function(response){
+          if (response['contest_slug']) {
+            var url_link = "/contest/"+response['contest_slug']+"/";
+            $("#search").attr("action",url_link);
+            window.location.href = url_link;
+          }
+          else {
+          console.log("Error no such contest found")
+          }
+        },
+        error:function(err){
+          console.log("error");
+        }
+    });
+  });
+  $('#sbtn-id').click(function(e) {
+    $("#searchlink").toggleClass('open');
+  });
+  $('#close').click(function(e) {
+    $("#searchlink").removeClass('open');
+  });
+
+
+});
+
+// Esc click to close form
+$(document).keydown(function(e) {
+  if (e.keyCode == 27) {
+    $("#searchlink").removeClass('open');
+  }
+});
+</script>
+
+
+<div class="workspace">
+  
+   
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#d43f3a;">
+          <h4 class="modal-title" id="modal-header" style="color:white;">Error </h4>
+          <button type="button" class="close text-white" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-body" style="color:black;"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="success_modal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#449d44;">
+          <h4 class="modal-title" id="modal-header" style="color:white;">Success </h4>
+          <button type="button" class="close text-white" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-body" style="color:black;">Payment Received.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#449d44;">
+          <h4 class="modal-title" id="modal-header1" style="color:white;">New Data Added</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <p id="modal-body1" style="color:black;">Please check the data set. New Data has been added along with the previous one. New file name : Alcohol consumption.</p>
+        </div>
+          <div class="modal-footer">
+            <!-- <img id="screenshot-img" src="" style="display:none;">
+            <button id="linkedin-share" class="sharer btn btn-success d-none" data-sharer="Linkedin">Share on Linkedin</button>
+            <button type="button" class="btn btn-success d-none" id="linkedin-screenshot">Want to share on Linkedin?</button> -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal for warning anonymous users -->
+  <div class="modal fade" id="warningModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#449d44;">
+          <h4 class="modal-title" id="warning-modal-header" style="color:white;">New Data Added</h4>
+          <button type="button" class="close text-white" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body">
+          <p id="warning-modal-body" style="color:black;">Please check the data set. New Data has been added along with the previous one. New file name : Alcohol consumption.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" id="slack_invite">Proceed</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal 3 -->
+  <div class="modal fade" id="myModal3" role="dialog" style="width:80%;margin-left:10%">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#449d44;">
+          <h4 class="modal-title" id="modal-header" style="color:white;">Set Final Submissions</h4>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        <div class="modal-body" style="height:400px;overflow-y : auto;width:100%">
+           <p id="final_submission_set_success"></p>
+           <form action="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/" method="post" id="form-submissions">
+               <input type="hidden" name="csrfmiddlewaretoken" value="lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX">
+               <table class="table table-striped" id="" style="padding-left:20px;width:100%;">
+                 <tbody><tr style="height:40px;">
+                    
+                     <th style="" class="col-sm-5">Answer Commit Message</th>
+                     <th style="" class="col-sm-2">Score</th>
+                     <th style="" class="col-sm-3 ">Time of Submission</th>
+                     <th style="" class="col-sm-2">Code File</th>
+                     <th style="padding-right:10px;">Select</th>
+                     
+                </tr>
+               </tbody></table>
+               <table class="table-striped" id="data" style="padding-left:20px;width:100%;">
+               </table>
+               <table id="final_1">
+                 <tbody><tr>
+                   <td>
+                     <button type="button" class="btn btn-primary col-sm-6 col-sm-offset-3" style="margin-top:30px;" id="submit">Set final Submission</button>
+                   </td>
+                 </tr>
+               </tbody></table>
+               <table id="final_2">
+                 <tbody><tr>
+                   <td>
+                     <button type="button" class="btn btn-primary col-sm-6 col-sm-offset-3" style="margin-top:30px;" id="submit_2">Set Submissions to check private score</button>
+                   </td>
+                 </tr>
+               </tbody></table>
+           </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- similar contest -->
+ <div class="modal fade" id="similarcontests" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#449d44;">
+          <h4 class="modal-title" id="modal-header" style="color:white;">Thank you for registering.</h4>
+
+          <a href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/" class="close mr-0">×</a>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="add_approach_model" tabindex="-1" role="dialog" aria-labelledby="add_approach_modal_label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="add_approach_modal_label">Add Approach Link</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="csrfmiddlewaretoken" value="lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX">
+          <label for="id_approach_link" class="control-label col-lg-2">User approach link</label>
+          <div class="controls col-lg-8">
+              <input class="textinput textInput form-control" id="id_approach_link" name="approach_link" type="url" value="" data-leaderboard_url="" required="">
+
+          </div>
+          <p id="add_approach_message_error" class="text-danger"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn av-btn text-white px-4" onclick="submitApproach(this)">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- CONTEST DETAILS PAGE START -->
+  <section class="av-contest-details-page">
+    <!-- <div class="av-contest-cover-img" style="background: rgba(9, 15, 80, 0.3) url('https://datahack-prod.s3.ap-south-1.amazonaws.com/__sized__/contest_cover/cover_5-thumbnail-1200x1200.png') no-repeat; background-size: cover;  "> </div> -->
+    <div class="container">
+      <div class="row">
+        <div class="card">
+            <picture>
+	            
+                <source media="(max-width: 767px)" srcset="https://datahack-prod.s3.amazonaws.com/contest_icon/icon_6.png" class="card-img-top">
+		          
+                <img src="./Janatahack_ Cross-sell Prediction_files/cover_5-thumbnail-1200x1200.png" alt="Flowers" class="card-img-top">
+            </picture>
+          <div class="card-header">
+            <div class="alert-box">
+</div>
+            <div class="card-header-info">
+              <h1 class="card-title">Janatahack: Cross-sell Prediction</h1>
+              <div class="card-header-contest-info">
+                <span>
+                  <i class="fas fa-map-marker-alt"></i>
+                  
+                    Online
+                  
+                </span>
+                
+                  <span>
+                    <i class="far fa-calendar-alt"></i>
+                    11-09-2020 11:59 PM to 20-09-2020 11:59 PM
+                  </span>
+                
+
+              </div>
+              <ul class="m-0 p-0 mt-2">
+                <li>
+                  <span>
+                    <i class="fas fa-user"></i>
+                    
+                      20506
+                    
+                  </span>
+                  <p>Registered</p>
+                </li>
+                
+                  
+                    <li>
+                      <span>
+                        <i class="fas fa-users"></i>
+                        68
+                      </span>
+                      <p>Number of Teams</p>
+                    </li>
+                  
+                
+                <li>
+                    <span>
+                      <i class="fas fa-trophy"></i>
+                      250 AV Points
+                    </span>
+                  <p>Prizes</p>
+                </li>
+              </ul>
+            </div>
+            <div class="card-header-timer">
+              <div id="countdown-timer"></div>
+              
+                
+                  
+                    <button type="button" class="btn text-white px-4 av-btn mt-3" id="participate" disabled="">Registered </button>
+                  
+                
+              
+            </div>
+
+          </div>
+          <div class="spinner-border text-primary d-tabel mx-auto mt-3 mb-3" role="status" id="av-api-response-loader" style="display:none;">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <div class="card-body">
+            
+              <!-- Tabs -->
+              <div class="card-body-tabs">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" id="About-tab" data-toggle="tab" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#About" role="tab" aria-controls="About" aria-selected="false">About</a>
+                  </li>
+                  
+                    
+                      
+                        
+                          
+                            <li class="nav-item">
+                              <a class="nav-link active" id="ProblemStatement-tab" data-toggle="tab" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#ProblemStatement" role="tab" aria-controls="ProblemStatement" aria-selected="true">Problem Statement</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="SolutionChecker-tab" data-toggle="tab" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#SolutionChecker" role="tab" aria-controls="SolutionChecker" aria-selected="false">Solution Checker</a>
+                            </li>
+                          
+                          <li class="nav-item">
+                            <a class="nav-link" id="MySubmissions-tab" data-toggle="tab" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#MySubmissions" role="tab" aria-controls="MySubmissions" aria-selected="false">My Submissions</a>
+                          </li>
+                        
+                      
+                      
+                        <li class="nav-item">
+                          <a class="nav-link" id="LeaderBoard-tab" data-toggle="tab" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#LeaderBoard" role="tab" aria-controls="LeaderBoard" aria-selected="false" onclick="
+                          showLeaderboard(this)">Leaderboard</a>
+                        </li>
+                      
+                    
+                  
+                  
+                    
+                      <li class="nav-item">
+                        
+                          
+                            <a class="nav-link" href="https://datahack.analyticsvidhya.com/teams/janatahack-cross-sell-prediction/create">Team</a>
+                          
+                        
+                      </li>
+                    
+                  
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" id="Discuss-tab" data-toggle="tab" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/#DiscussTab" role="tab" aria-controls="DiscussTab" aria-selected="false" onclick="
+                    showDiscussions(this)">Discuss</a>
+                  </li>
+                  
+                  
+                </ul>
+              </div>
+              <!-- Tabs Content -->
+              <div class="tab-content card-body-contents" id="myTabContent">
+                <div class="tab-pane fade" id="About" role="tabpanel" aria-labelledby="about-tab">
+                  
+<div class="row">
+  <div class="col-lg-8 col-md-8 col-sm-12">
+
+    
+
+    
+      
+        <p>Cross-selling identifies products or services that satisfy additional, complementary needs that are unfulfilled by the original product that a customer possesses. As an example, a mouse could be cross-sold to a customer purchasing a keyboard. Oftentimes, cross-selling points users to products they would have purchased anyways; by showing them at the right time, a store ensures they make the sale.</p>
+
+<p>Cross-selling is prevalent in various domains and industries including banks. For example, credit cards are cross-sold to people registering a savings account. In ecommerce, cross-selling is often utilized on product pages, during the checkout process, and in lifecycle campaigns. It is a highly-effective tactic for generating repeat purchases, demonstrating the breadth of a catalog to customers. Cross-selling can alert users to products they didn't previously know you offered, further earning their confidence as the best retailer to satisfy a particular need.</p>
+
+<p>This weekend we invite you to participate in another Janatahack with the theme of Cross-sell prediction. Stay tuned for the problem statement and datasets this Friday and get a chance to work on a real industry case study along with 250 AV points at stake.</p>
+
+<p><br></p>
+
+<h2>Who should participate?</h2>
+
+<p>This hackathon is open for all data enthusiasts: Statisticians, Data scientists, Analysts, and Students</p>
+
+<p><br></p>
+
+<p>FAQs</p>
+
+<p>1. Where can I find the dataset and the problem statement for the hackathon?</p>
+
+<p>The contest will go live on the designated contest start date and time. There is a timer that is shown at the top of this page which shows the remaining time before the contest goes live. This is when you can access the problem statement and datasets from the problem statement tab.</p>
+
+<p>&nbsp;</p>
+
+<p>2. Can I share my approach/code?</p>
+
+<p>Absolutely. You are encouraged to share your approach and code file with the community. There is even a facility at the leaderboard to share the link to your code/solution description.</p>
+
+<p><br></p>
+
+<p>3. I am facing a technical issue with the platform/have a doubt regarding the problem statement. Where can I get support?</p>
+
+<p>You may use the discuss tab to post your technical issues or any other issue with the problem statement</p>
+
+<p><br></p>
+      
+    
+
+    
+    
+    <input type="hidden" name="purpose" id="purpose" value="normal">
+  </div>
+  <!-- RIGIT SIDE HTML FOR ADDD -->
+  <div class="col-lg-4 col-md-4 col-sm-12">
+    <div class="contest-card-right-side">
+         
+
+<div style="margin-top:20px; margin-bottom: 5px;">
+  
+  
+  
+    <div class="spinner-border text-primary d-tabel mx-auto mt-3 mb-3" role="status" id="av-slack-preloader" style="display:none;">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <button type="button" class="av-btn-outline btn text-capitalize d-table mx-auto px-4 mb-3" id="slack_invite_av_btn">Join Slack Live Chat</button>
+  
+  
+    
+      <button type="button" class="av-btn-red challenge-btn btn text-capitalize d-table mx-auto px-4 mb-3" href="#" data-toggle="modal" data-target="#share-contest-modal" id="share_challenge_av_btn">Challenge a friend</button>
+    
+  
+  
+  <!--SocialShare-->
+  
+    <ul>
+      <li>
+          <a href="https://www.facebook.com/sharer.php?u=https://datahack.analyticsvidhya.com%2Fcontest%2Fjanatahack-cross-sell-prediction%2F%3Futm_source%3Dfb_share%26utm_medium%3Ddh_social&amp;t=Janatahack:%20Cross-sell%20Prediction" onclick="ga(&#39;send&#39;, {&#39;hitType&#39;: &#39;event&#39;, &#39;eventCategory&#39;: &#39;SocialShare&#39;, &#39;eventAction&#39;: &#39;clicked&#39;, &#39;eventLabel&#39;: &#39;Facebook&#39;});" title="Share on Facebook..." class="popup">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+      </li>
+      <li>
+          <a href="https://twitter.com/share?utm_source=twitter_share&amp;utm_medium=dh_social&amp;url=https://datahack.analyticsvidhya.com+/contest/janatahack-cross-sell-prediction/&amp;text=Hey!%20I%20am%20participating%20in%20an%20exciting%20problem%20by%20@AnalyticsVidhya%20Janatahack:%20Cross-sell%20Prediction%20Compete%20and%20Learn.%20#Datahack" onclick="ga(&#39;send&#39;, {&#39;hitType&#39;: &#39;event&#39;, &#39;eventCategory&#39;: &#39;SocialShare&#39;, &#39;eventAction&#39;: &#39;clicked&#39;, &#39;eventLabel&#39;: &#39;Twitter&#39;});" class="popup">
+            <i class="fab fa-twitter"></i>
+          </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://datahack.analyticsvidhya.com&amp;title=Janatahack:%20Cross-sell%20Prediction&amp;source=" class="popup">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    </ul>
+  
+  
+  <!-- Share Contest Modal -->
+  <div class="modal fade" id="share-contest-modal" tabindex="-1" role="dialog" aria-labelledby="share-contest-modal-CenterTitle" aria-hidden="true">
+    <div class="modal-dialog fixed-top" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Challenge a friend</h5>
+            </div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>esc</span>
+        </button>
+        <div class="modal-body">
+          <div id="show_contest_field" class="showContestField">
+            <input type="text" class="form-control" id="share_with_others" name="search_user" autocomplete="off" placeholder="Enter Name">
+            <button type="submit" class="btn btn-default" id="share_contest_button">Share</button>
+            <div id="users_list_share" class="showUsers"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  
+    <a href="https://courses.analyticsvidhya.com/courses/introduction-to-analytics/?utm_source=hackathon&amp;utm_medium=side_banner&amp;utm_campaign=free_ba_course"><img class="" src="https://datahack-prod.s3.ap-south-1.amazonaws.com/banners/ba_vs_ds_3.png" alt="Business Analytics vs Data Science"></a>
+  
+</div>
+<script type="text/javascript" src="./Janatahack_ Cross-sell Prediction_files/debounce.09949f9f21c3.js.download"></script>
+ <script>
+ $(document).ready(function() {
+  $("#users_list_share p").remove();
+  var index = -1;
+  $('#share_with_others').keydown(function(e){
+    var pressed=false
+    if($('#share_with_others').val()==''){
+      $("#users_list_share p").remove();
+      $(this).removeClass('focus-active');
+    }
+    if(e.keyCode==38){
+      // if up arrow key is pressed then decrease the index value.
+      index--;
+      if(index<0){
+        //if handles the overflow
+        index=0
+      }
+      pressed=true
+    }
+    else if(e.keyCode==40){
+      //if down arrow key is pressed then increase the index value.
+      index++
+      if(index > $('#users_list_share p').length-1){
+        // it handles the overflow
+        index=0
+      }
+      pressed=true
+    }
+    if(pressed==true){
+      /* if any arrow key is pressed then set the value of
+        that div to the input box... focus is handelled by 'active-search' class
+       */
+      $('#users_list_share p').removeClass('active-search')
+      $('#users_list_share p').eq(index).addClass('active-search')
+      $('#share_with_others').val($('#users_list_share p').eq(index).text())
+    }
+    if(e.keyCode==9){
+      // if tab is pressed then close the dropdown
+      $('#users_list_share p').remove()
+      $('#share_with_others').removeClass('focus-active');
+    }
+  });
+  $('#share_with_others').keyup(function(e){
+      /*when ever any key is pressed this event got fired*/
+      if($('#share_with_others').val()==''){
+        //if the input tag is empty then remove the focus form it and do not open the suggestor
+        $("#users_list_share p").remove();
+        $(this).removeClass('focus-active');
+      }
+      var user_name = $(this).val();
+      // no ajax for space(32), backspace(8), delete, down-arrow,up-arrow
+      if(user_name.length > 0 && e.keyCode != 40 && e.keyCode != 38 && e.keyCode != 32 && e.keyCode !=8){
+        $.ajax({
+          type: "POST",
+          url: "/contest/janatahack-cross-sell-prediction/search_mates/",
+          data: {user_name: user_name},
+          success:function(response){
+           $("#users_list_share").empty();
+           var len = response['users'].length
+            if (len==0){
+              // if length is 0 then close the dropdown css
+              $('#share_with_others').removeClass('focus-active');
+            }
+            else if(len!=0 && e.keyCode==8){
+              //if length not equal to 0 and backspace is pressed
+              $('#share_with_others').addClass('focus-active');
+            }
+            else{
+              $('#share_with_others').addClass('focus-active');
+              $('#share_with_others').focus()
+
+            }
+            for (var i=0;i<response['users'].length;i++){
+              $("<p>"+response['users'][i].av_discuss_user_id+"</p>").appendTo("#users_list_share");
+            }
+            $("#users_list_share p").bind("click",function(){
+              $("#share_with_others").val($(this).text()).focus()
+              $("#users_list_share").empty();
+              $('#share_with_others').removeClass('focus-active');
+            });
+          }
+        });
+        if(event.keyCode==13) {
+        $('#share_contest_button').click();
+      }
+      }
+  });
+    $("#slack_invite_av_btn").on("click", function(){
+      console.log("slack invite button was clicked")
+      $('#av-slack-preloader').css("display", "block")
+      $('#slack_invite_av_btn').css("display", "none")
+      $('#warningModal').modal('hide');
+      var data = {"email":"", "first_name":"salmaan_", "csrfmiddlewaretoken":"lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX"};
+      $.ajax({
+        type : "POST",
+        url : "/slack",
+        data : data,
+        success : function(data)
+        {
+          $('#av-slack-preloader').css("display", "none")
+          $('#slack_invite_av_btn').css("display", "block")
+          if (data["data"]["ok"])
+          {
+            $("#modal-body1").html("You have been successfully invited. Please check your inbox for slack invite");
+            $("#modal-header1").html("Success");
+            $('#myModal1').modal('show');
+          }
+          else{
+            console.log("error was ", data["data"]);
+            if (data["data"]["ok"] == false) {
+              $("#modal-body").html(data["data"]["error"]);
+            } else {
+              $("#modal-body").html("Some error occurred. Please try again later");
+            }
+
+            $('#myModal').modal('show');
+          }
+        }
+      });
+    });
+
+    $("#warning_message_slack").click(function(){
+        $("#warning-modal-body").html("We cannot ensure your anonymity on slack. click to proceed anyways.");
+        $("#warning-modal-header").html("Warning");
+        $('#warningModal').modal('show');
+    });
+    $("#warning_message_share_challenge").click(function(){
+        $("#warning-modal-body").html("You cannot challenge a friend as you are anonymous user. click to proceed anyways.");
+        $("#warning-modal-header").html("Warning");
+        $('#warningModal').modal('show');
+    });
+  });
+$("#share_contest_button").click(function(){
+  var user_name = $("#share_with_others").val();
+  $("#share-contest-modal").modal("hide");
+  $.ajax({
+    type: "POST",
+    data: {user_name: user_name},
+    url: "/contest/janatahack-cross-sell-prediction/share/",
+    success:function(response){
+      console.log("in success share");
+      // alert("Mail sent successfully")
+      if(response['requested_user_status'] == 0) {
+        alert("No such user found");
+      }
+    },
+    error:function(err){
+      console.log("in error share");
+    }
+  });
+  // var u = ''
+  // console.log('u', u)
+})
+ </script>
+
+
+    </div>
+  </div>
+</div>
+
+                </div>
+                <div class="tab-pane fade active show" id="ProblemStatement" role="tabpanel" aria-labelledby="ProblemStatement-tab">
+                  
+
+
+    
+<h2></h2>
+
+  
+      <p><span style="font-weight: 400; font-size: 16px;">Your client is an Insurance company that has provided Health Insurance to its customers now they need your help in building a model to predict whether the policyholders (customers) from past year will also be interested in Vehicle Insurance provided by the company.</span></p>
+<p><span style="font-size: 16px;"><span style="font-weight: 400;">An insurance policy is an arrangement by which a company undertakes to provide a guarantee of compensation for specified loss, damage, illness, or death in return for the payment of a specified premium. A premium is a sum of money that the customer needs to pay regularly to an insurance company for this guarantee.</span></span></p>
+<p><span style="font-size: 16px;"><span style="font-weight: 400;">For example, you may pay a premium of Rs. 5000 each year for a health insurance cover of Rs. 200,000/- so that if, God forbid, you fall ill and need to be hospitalised in that year, the insurance provider company will bear the cost of hospitalisation etc. for upto Rs. 200,000. Now if you are wondering how can company bear such high hospitalisation cost when it charges a premium of only Rs. 5000/-, that is where the concept of probabilities comes in picture. For example, like you, there may be 100 customers who would be paying a premium of Rs. 5000 every year, but only a&nbsp;few of them (say 2-3) would get hospitalised that year and not everyone. This way everyone shares the risk of everyone else.</span></span></p>
+<p><span style="font-size: 16px;"><span style="font-weight: 400;">Just like medical insurance, there is vehicle insurance where every year customer needs to pay a premium of certain amount to insurance provider company so that in case of unfortunate accident by the vehicle, the insurance provider company will provide a compensation (called ‘sum assured’) to the customer.</span></span></p>
+<p><span style="font-size: 16px;"><span style="font-weight: 400;">Building a model to predict whether a customer would be interested in Vehicle Insurance <span style="color: rgb(0, 0, 0); font-family: Times; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;">is&nbsp;</span>extremely helpful for the company because it can then accordingly plan its communication strategy to reach out to those customers and optimise its business model and revenue.&nbsp;</span></span></p>
+<p><span style="font-weight: 400; font-size: 16px;">Now, in order to predict, whether the customer would be interested in Vehicle insurance, you have information about demographics (gender, age, region code type), Vehicles (Vehicle Age, Damage), Policy (Premium, sourcing channel) etc.</span></p>
+<p>&nbsp;</p>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="font-size: 30px;">Data Description</span></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">train.csv</h2>
+<table style="box-sizing: border-box; border-collapse: collapse; color: rgb(74, 74, 74); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; border: none; width: 453pt;">
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 700; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border: 0.5pt solid windowtext; height: 16pt; width: 92pt;">Variable</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 700; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-top: 0.5pt solid windowtext; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-left: none; width: 361pt;">Definition</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">id</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Unique ID for the customer</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Gender</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Gender of the customer</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Age<br></td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Age of the customer<br></td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Driving_License</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">0 : Customer does not have DL, 1 : Customer already has DL</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Region_Code</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Unique code for the region of the customer</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Previously_Insured</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">1 : Customer already has Vehicle Insurance, 0 : Customer doesn't have Vehicle Insurance</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Vehicle_Age</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Age of the Vehicle&nbsp;</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Vehicle_Damage<br></td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">1 : Customer got his/her vehicle damaged in the past.<br>0 :
+                <span style="color: rgb(0, 0, 0); font-family: Calibri, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Customer didn't get his/her vehicle damaged in the past.</span></td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Annual_Premium</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">The amount customer needs to pay as premium in the year</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Policy_Sales_Channel</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Anonymised Code for the channel of outreaching to the customer ie. Different Agents, Over Mail, Over Phone, In Person, etc.</td>
+        </tr>
+        <tr>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Vintage</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Number of Days, Customer has been associated with the company</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Response</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">1 : &nbsp;Customer is interested, 0 : Customer is not interested</td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><br></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">test.csv</h2>
+<table style="box-sizing: border-box; border-collapse: collapse; color: rgb(74, 74, 74); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; border: none; width: 453pt;">
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 700; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border: 0.5pt solid windowtext; height: 16pt; width: 92pt;">Variable</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 700; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-top: 0.5pt solid windowtext; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-left: none; width: 361pt;">Definition</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">id</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Unique ID for the customer</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Gender</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Gender of the customer</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Age<br></td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Age of the customer<br></td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Driving_License</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">0 : Customer does not have DL, 1 : Customer already has DL</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Region_Code</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Unique code for the region of the customer</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Previously_Insured</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">1 : Customer already has Vehicle Insurance, 0 : Customer doesn't have Vehicle Insurance</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Vehicle_Age</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Age of the Vehicle&nbsp;</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Vehicle_Damage<br></td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">1 : Customer got his/her vehicle damaged in the past.<br>0 :
+                <span style="color: rgb(0, 0, 0); font-family: Calibri, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">Customer didn't get his/her vehicle damaged in the past.</span></td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Annual_Premium</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">The amount customer needs to pay as premium in the year</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Policy_Sales_Channel</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Anonymised Code for the channel of outreaching to the customer ie. Different Agents, Over Mail, Over Phone, In Person, etc.</td>
+        </tr>
+        <tr>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Vintage</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Number of Days, Customer has been associated with the company</td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><br></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">sample_submission.csv</h2>
+<table style="box-sizing: border-box; border-collapse: collapse; color: rgb(74, 74, 74); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; border: none; width: 453pt;">
+    <tbody style="box-sizing: border-box;">
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 700; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border: 0.5pt solid windowtext; height: 16pt; width: 92pt;">Variable</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 700; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-top: 0.5pt solid windowtext; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-left: none; width: 361pt;">Definition</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">id</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Unique ID</td>
+        </tr>
+        <tr style="box-sizing: border-box;">
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; height: 16pt; border-top: none;">Response</td>
+            <td style="box-sizing: border-box; color: black; font-size: 16px; font-weight: 400; font-style: normal; text-decoration: none; font-family: Calibri, sans-serif; vertical-align: bottom; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; border-top: none; border-left: none;">Probability of Customer being interested in Vehicle Loan</td>
+        </tr>
+    </tbody>
+</table>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><strong style="box-sizing: border-box; font-weight: bolder; text-align: inherit;"><br style="box-sizing: border-box;"></strong></p>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><br style="box-sizing: border-box;"></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">How to Make a Submission?</h2>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><iframe src="./Janatahack_ Cross-sell Prediction_files/zevnI9TgTtA.html" width="700" height="380" frameborder="0" allowfullscreen="allowfullscreen" data-mce-fragment="1" style="box-sizing: border-box; border: 0px; background: none; box-shadow: none;"></iframe></h2>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><br style="box-sizing: border-box;"></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">Evaluation Metric</h2>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">The evaluation metric for this hackathon is ROC_AUC score.</p>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><br style="box-sizing: border-box;"></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><strong style="box-sizing: border-box; font-weight: bolder;">Public and Private split</strong></h2>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">The public leaderboard is based on 40% of test data, while final rank would be decided on remaining 60% of test data (which is private leaderboard)</p>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;">&nbsp;</span></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;"><strong style="box-sizing: border-box; font-weight: bolder;">Guidelines for Final Submission</strong></span></h2>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;">Please ensure that your final submission includes the following:</span></p>
+<ol style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">Solution file containing the predicted response of the customer (Probability of response 1)</span></li>
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">Code file for reproducing the submission, note that it is mandatory to submit your code for a valid final submission</span></li>
+</ol>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;">&nbsp;</span></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;">How to Set Final Submission?</span></h2>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;"><iframe src="./Janatahack_ Cross-sell Prediction_files/knx8aht0xUg.html" width="700" height="380" frameborder="0" allowfullscreen="allowfullscreen" data-mce-fragment="1" style="box-sizing: border-box; border: 0px; background: none; box-shadow: none;"></iframe></span></p>
+<p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-size: 16px; line-height: 22px; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><br style="box-sizing: border-box;"></p>
+<h2 style="box-sizing: border-box; margin: 0.9rem 0px; font-weight: 500; line-height: 1.2; font-size: 22px; font-family: Roboto, sans-serif; padding: 0px; color: rgb(74, 74, 74); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><span style="box-sizing: border-box;"><strong style="box-sizing: border-box; font-weight: bolder;">Hackathon Rules</strong></span></h2>
+<ol style="box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: rgb(74, 74, 74); font-family: Roboto, sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;"><em style="box-sizing: border-box;">The final standings would be based on private leaderboard score'</em></span></li>
+    <li style="box-sizing: border-box;">ID variable is not allowed to be used as part of the model</li>
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">Setting the final submission is recommended. Without a final submission, the submission corresponding to best public score will be taken as the final submission</span></li>
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">Use of external datasets or labels from open source will lead to disqualification from the leaderboard</span></li>
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">Entries submitted after the contest is closed, will not be considered</span></li>
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">The code file pertaining to your final submission is mandatory while setting final submission for AV Points</span></li>
+    <li style="box-sizing: border-box;"><span style="box-sizing: border-box;">Throughout the hackathon, you are expected to respect fellow hackers and act with high integrity.</span></li>
+</ol>
+  
+
+
+    
+
+
+<h2 id="data_dictionary">Data</h2>   
+
+    
+    <a class="btn av-btn-outline av-btn" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/download/test-file" target="blank">
+       <i class="fa fa-download"></i>Test File
+    </a>
+    
+
+    
+    <a class="btn av-btn-outline av-btn" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/download/train-file" target="blank">
+      <i class="fa fa-download"></i>Train File
+    </a> 
+
+
+    
+    <a class="sample-submission btn av-btn-outline av-btn" href="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/download/sample-submission" target="blank">
+       <i class="fa fa-download"></i>Sample Submissions
+    </a> 
+
+
+    
+
+
+
+
+<script type="text/javascript">
+$(".test-file").click(function(e) {
+  var href = $(this).attr("href");
+<!--  push_clevertap_event_anchor(e, href, "Test File", {-->
+<!--    "Title": "janatahack-cross-sell-prediction",-->
+<!--    "Prize": "None"-->
+<!--  });-->
+});
+$(".train-file").click(function(e) {
+  var href = $(this).attr("href");
+<!--  push_clevertap_event_anchor(e, href, "Train File", {-->
+<!--    "Title": "janatahack-cross-sell-prediction",-->
+<!--    "Prize": "None"-->
+<!--  });-->
+});
+$(".sample-submission").click(function(e) {
+  var href = $(this).attr("href");
+<!--  push_clevertap_event_anchor(e, href, "Sample Submission", {-->
+<!--    "Title": "janatahack-cross-sell-prediction",-->
+<!--    "Prize": "None"-->
+<!--  });-->
+});
+
+</script>
+
+
+
+
+
+                </div>
+                <div class="tab-pane fade" id="SolutionChecker" role="tabpanel" aria-labelledby="SolutionChecker-tab">
+                  
+  
+    
+    <div class="row solution-checker-form">
+      <div class="t"></div>
+      <form action="https://datahack.analyticsvidhya.com/contest/janatahack-cross-sell-prediction/True/" method="post" enctype="multipart/form-data" class="form-horizontal" id="form1">
+        <input type="hidden" name="csrfmiddlewaretoken" value="lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX">
+        <div class="form-group row">
+          <label for="code_file1" class="col-lg-4 col-md-4 col-sm-12 col-form-label">Code File </label>
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <label class="btn-bs-file btn av-btn-outline av-btn files">
+              <i class="fa fa-upload"></i> Upload File
+              <input type="file" name="code_file" class="form-control" id="code_file1" onchange="setCodeFilePath(this)" required="">
+            </label>
+            <small class="form-text text-muted" id="code-file-placeholder-name"></small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="solution_file1" class="col-lg-4 col-md-4 col-sm-12 col-form-label">Solution File*</label>
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <label class="btn-bs-file btn av-btn-outline av-btn files">
+              <i class="fa fa-upload"></i> Upload File
+              <input type="file" accept=".csv" name="solution_file" class="form-control" id="solution_file1" onchange="setSolutionFilePath(this)" required="">
+            </label>
+            (<strong>.csv only</strong>)
+            <small class="form-text text-muted" id="solution-file-placeholder-name"></small>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="message1" class="col-lg-4 col-md-4 col-sm-12 col-form-label">Solution Description<br> (max : 180 chars)*</label>
+          <div class="col-lg-8 col-md-8 col-sm-12">
+            <input type="text" name="message" class="form-control" placeholder="Solution Description (for your interest)" value="" maxlength="180" id="message1">
+          </div>
+        </div>
+        
+          <input id="show_code_lb_query" value="False" hidden="true">
+        
+        
+          <button type="button" id="sub1" class="av-btn-red btn text-capitalize px-4 col-md-6 offset-md-4" onclick="file_checker(&#39;url1&#39;)">Add Solution</button>
+        
+      </form>
+    </div>
+
+    
+
+  
+
+
+<script type="text/javascript" charset="utf-8" async="" defer="">
+
+function link_display() {
+  document.getElementById("sub1").disabled = false;
+};
+
+function file_checker(url_name) {
+
+  $('#code-file-placeholder-name').html('')
+  $('#solution-file-placeholder-name').html('')
+     var solution_filename = $("#solution_file1").val();
+     var code_file = $("#code_file1").val();
+     var code_link = '';
+
+     if($("#show_code_lb_query").val() == 'True') {
+        code_link = $("input[name='code_link_display']:checked").val();
+     } else {
+        code_link = 'False';
+     }
+
+     var commit_message = $("#message1").val();
+     var solution_file_ext = $('#solution_file1').val().split('.').pop().toLowerCase();
+
+     if(solution_filename == "") {
+          $("#modal-body").html("Solution File is required. Please upload solution File");
+          $('#myModal').modal('show');
+     }
+     else {
+         
+            if($.inArray('.' + solution_file_ext, ['.csv']) == -1) {
+                 $("#modal-body").html("Invalid Solution File . Please upload a valid solution File. <br/>Only " + ".csv" + " files are allowed");
+                 $('#myModal').modal('show');
+                 return false ;
+            }
+         
+
+    if (commit_message == "")
+     {
+          $("#modal-body").html("Message is required. Please add a message to your Solution");
+          $('#myModal').modal('show');
+     }
+     else
+     {
+    if(code_link != 'True' && code_link != 'False' && ($.inArray(purpose, ["ama", "case_study", "blogathon", "excel", "learnup", "mcq", "visualize", "workshop"] ) > -1)){
+          $("#modal-body").html("Please select Yes/NO to question <strong>Do you want to show your code on leaderboard?<strong> ");
+          $('#myModal').modal('show');
+     }
+     else
+     {
+          var a = "<img src = 'https://datahack-prod.s3.ap-south-1.amazonaws.com/profile_photos/oie_91149170D2m4jGB.gif' class = '' style = 'width:250px;margin-left:30%'><div class='progress progress-striped active col-md-12 col-sm-12 col-xs-12 col-lg-12'><div class='progress-bar' role='progressbar' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'></div></div>"
+          $("#modal-body1").html(a)
+          $("#modal-header1").html("Uploading");
+          $('#myModal1').modal('show');
+          // $('#linkedin-screenshot').addClass('d-none');
+          upload(url_name);
+     }
+     }
+     }
+ }
+
+   function setCodeFilePath(obj) {
+      if(obj.files) {
+        $('#code-file-placeholder-name').html(obj.files[0].name)
+      }
+
+   }
+
+  function setSolutionFilePath(obj) {
+    if(obj.files) {
+      $('#solution-file-placeholder-name').html(obj.files[0].name)
+    }
+  }
+
+  $(document).ready(function() {
+
+    console.log("Document ready was called");
+    
+
+      $('#myModal1').modal('hide');
+
+    
+
+    // $("#linkedin-screenshot").unbind().click(function(){
+        // var url = ''
+    //     console.log("here")
+    //     html2canvas($("#myModal1"), {
+    //       onrendered: function(canvas) {
+    //         canvas.getContext("2d");
+    //         var dataurl = canvas.toDataURL('image/png');
+    //         var img = document.getElementById("screenshot-img");
+    //         img.src = dataurl
+    //         var hrefelement = document.createElement('a');
+    //         hrefelement.href = dataurl;
+    //         hrefelement.download = `ScreenShot.png`;
+    //         hrefelement.click();
+    //         hrefelement.remove();
+    //     }
+    // })
+    //   $("#linkedin-share").removeClass("d-none");
+    //   $("#linkedin-screenshot").addClass("d-none");
+    //   });
+  });
+
+  function upload(url_name){
+    var data = new FormData($('#form1').get(0));
+    data["csrfmiddlewaretoken"] = "lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX";
+    
+      var lnk = "/problem/J05P1A1KWNEKRH8/add-programming-answer/"
+    
+
+    $.ajax({
+      xhr: function()
+      {
+        var xhr = new window.XMLHttpRequest();
+        //Upload progress
+        xhr.upload.addEventListener("progress", function(evt){
+          if (evt.lengthComputable) {
+            var percentComplete = evt.loaded * 100/ evt.total ;
+            $('.progress-bar').css('width', percentComplete+'%').attr('aria-valuenow', percentComplete);
+          }
+        }, false);
+        //Download progress
+        xhr.addEventListener("progress", function(evt){
+          if (evt.lengthComputable) {
+            var percentComplete = evt.loaded / evt.total;
+          }
+        }, false);
+
+        return xhr;
+      },
+      url: lnk,
+      type: 'POST',
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function(data) {
+        console.log("in success");
+        $(".hid").css({"display":"none"});
+        $("#solution_file1").val("");
+        $("#message1").val("");
+        if(data["error"])
+        {
+          console.log("@@@@");
+          $("#modal-body").html(data["message"]);
+
+          setTimeout(function() {
+            console.log("****");
+            $('#myModal').modal('show');
+            $('#myModal1').modal('hide');
+          },1000);
+
+        }
+        else{
+          $('#SolutionChecker').html(data)
+        }
+      },
+      error : function(data){
+        $(".hid").css({"display":"none"});
+        $("#solution_file1").val("");
+        $("#message1").val("");
+        $("#modal-body").html("Some error occured. Please try after some time.");
+        setTimeout(function() {
+          $('#myModal').modal('show');
+          $('#myModal1').modal('hide');
+        },1000);
+
+      }
+    });
+   }
+
+</script>
+
+
+                </div>
+                <div class="tab-pane fade" id="DiscussTab" role="tabpanel" aria-labelledby="Discuss-tab">
+                </div>
+                <div class="tab-pane fade" id="MentorshipTab" role="tabpanel" aria-labelledby="Mentorship-tab">
+                </div>
+                <div class="tab-pane fade" id="MySubmissions" role="tabpanel" aria-labelledby="MySubmissions-tab">
+                </div>
+                <div class="tab-pane fade" id="LeaderBoard" role="tabpanel" aria-labelledby="LeaderBoard-tab">
+                </div>
+                <div class="tab-pane fade" id="Team" role="tabpanel" aria-labelledby="Team-tab">
+                  <p>Please register to participate in the contest</p>
+                </div>
+              </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- CONTEST DETAILS PAGE END -->
+
+  <div class="container">
+    <div class="row">
+    
+    </div>
+  </div>
+  <button type="button" class="btn text-white px-2 av-btn" id="av_Feedback">Feedback <i class="fas fa-comment-dots"></i></button>
+</div>
+
+
+
+
+    <script type="text/javascript">
+        // using jQuery
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie != '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = jQuery.trim(cookies[i]);
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    console.log(csrftoken);
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+    </script>
+
+
+
+
+    <script type="text/javascript" src="./Janatahack_ Cross-sell Prediction_files/feedback.min.40eb69522c30.js.download"></script>
+
+
+
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <a href="https://www.analyticsvidhya.com/">
+            <img src="./Janatahack_ Cross-sell Prediction_files/AV_logo_wite.png" alt="Analytics Vidhya" width="85%">
+          </a>
+          <div class="download-av-app">
+            <h6 class="d-flex align-items-center">Download App</h6>
+            <a rel="nofollow" href="https://play.google.com/store/apps/details?id=com.analyticsvidhya.android" target="_blank">
+              <img src="./Janatahack_ Cross-sell Prediction_files/play_store_icon.49aadc124788.svg" alt="play store">
+            </a>
+            <a rel="nofollow" href="https://apps.apple.com/us/app/analytics-vidhya/id1470025572" target="_blank">
+              <img src="./Janatahack_ Cross-sell Prediction_files/app_Store_icon.9eda9dd200b5.svg" alt="App Store">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div class="av-links">
+            <ul>
+              <li>
+                <h6>Analytics Vidhya</h6>
+                <a href="https://www.analyticsvidhya.com/about-me/">About Us</a>
+                <a href="https://www.analyticsvidhya.com/about-me/team/">Our Team</a>
+                <a href="https://www.analyticsvidhya.com/about-me/career-analytics-vidhya/">Careers</a>
+                <a href="https://www.analyticsvidhya.com/contact/">Contact us</a>
+              </li>
+              <li>
+                <h6>Data Scientists</h6>
+                <a href="https://www.analyticsvidhya.com/blog/">Blog</a>
+                <a href="https://datahack.analyticsvidhya.com/">Hackathon</a>
+                <a href="https://discuss.analyticsvidhya.com/">Discussions</a>
+                <a href="https://www.analyticsvidhya.com/jobs/">Apply Jobs</a>
+              </li>
+              <li>
+                <h6>Companies</h6>
+                <a href="https://www.analyticsvidhya.com/corporate/">Post Jobs</a>
+                <a href="https://courses.analyticsvidhya.com/">Trainings</a>
+                <a href="https://datahack.analyticsvidhya.com/">Hiring Hackathons</a>
+                <a href="https://www.analyticsvidhya.com/contact/">Advertising</a>
+              </li>
+              <li>
+                <h6>Visit us</h6>
+                <div class="av-get-social">
+                    <a rel="nofollow" href="https://www.facebook.com/AnalyticsVidhya/" target="_blank" class="social-visit fb mr-2">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a rel="nofollow" href="https://www.linkedin.com/company/analytics-vidhya/" target="_blank" class="social-visit in mr-2">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a rel="nofollow" href="https://www.youtube.com/channel/UCH6gDteHtH4hg3o2343iObA" target="_blank" class="social-visit utub mr-2">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                    <a rel="nofollow" href="https://twitter.com/analyticsvidhya" target="_blank" class="social-visit tw mr-2">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--FOOTER THIRD ROW START-->
+    <div class="footer-link-bottom">
+      <div class="container">
+        <div class="row">
+            <div class="mr-auto">
+              <p>© Copyright 2013-2020 Analytics Vidhya.</p>
+            </div>
+            <div class="ml-auto">
+              <a href="https://www.analyticsvidhya.com/privacy-policy/" target="_blank">Privacy Policy</a>
+              <a href="https://www.analyticsvidhya.com/terms/" target="_blank">Terms of Use</a>
+              <a href="https://www.analyticsvidhya.com/refund-policy/" target="_blank">Refund Policy</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--FOOTER THIRD ROW END-->
+</footer>
+
+
+<form id="logout-form" action="https://datahack.analyticsvidhya.com/oidc/logout/" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX">
+</form>
+    <script src="./Janatahack_ Cross-sell Prediction_files/rrssb.bbe41f99bb78.js.download"></script>
+<script src="./Janatahack_ Cross-sell Prediction_files/main.91c1dc50d941.js.download"></script>
+<script src="./Janatahack_ Cross-sell Prediction_files/moment.0941fc7ec398.js.download"></script>
+<script src="./Janatahack_ Cross-sell Prediction_files/moment-timezone-with-data.e983a7d04754.js.download"></script>
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="./Janatahack_ Cross-sell Prediction_files/popper.min.js.download" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./Janatahack_ Cross-sell Prediction_files/bootstrap.min.js.download" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+<script type="text/javascript" src="./Janatahack_ Cross-sell Prediction_files/tinymce.min.js.download"></script>
+<script>
+var leaderboardSocket = ''
+var discussSocket = ''
+$(document).ready(function(){
+  
+  $('#myTab a').click(function(e) {
+    $(this).tab('show');
+  });
+  // store the currently selected tab in the hash value
+  $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+    var id = $(e.target).attr("href").substr(1);
+    window.location.hash = id;
+  });
+  // on load of the page: switch to the currently selected tab
+  var activeTab = window.location.hash;
+  if(activeTab=="#LeaderBoard"){
+      $('#LeaderBoard-tab').trigger("click");
+      $('#myTab a[href="' + activeTab + '"]').tab('show');
+  } else if (activeTab == "#MySubmissions") {
+    $('#MySubmissions-tab').trigger("click");
+    $('#myTab a[href="' + activeTab + '"]').tab('show');
+  }else if (activeTab == "#DiscussTab") {
+    $('#Discuss-tab').trigger("click");
+    $('#myTab a[href="' + activeTab + '"]').tab('show');
+  }else if(activeTab == "#MentorshipTab"){
+    $('#Mentorship-tab').trigger("click");
+    $('#myTab a[href="' + activeTab + '"]').tab('show');
+  }else {
+    $('#myTab a[href="' + activeTab + '"]').tab('show');
+  }
+  if($("#terms_and_cond")){
+    $("#terms_and_cond").modal("show");
+  }
+  // modal to display similar contests
+  
+    $('#similarcontests').modal("hide");
+  
+
+});
+
+$('#MySubmissions-tab').click(function() {
+   console.log("My submissions tab was clicked")
+   var loader = document.getElementById('av-api-response-loader');
+   loader.style.display = "block";
+
+   $('#MySubmissions').html('').load(
+     "/contest/janatahack-cross-sell-prediction/get_submissions_list"
+   )
+});
+
+function showDiscussions(obj) {
+  console.log("inside discuss")
+  var loader = document.getElementById('av-api-response-loader');
+  loader.style.display = "block";
+  contest_slug = 'janatahack-cross-sell-prediction'
+  contest_id = '896'
+  discussSocket = new WebSocket(((window.location.protocol === 'https:') ? 'wss://' : 'ws://') +window.location.host+'/ws/discussion/'+contest_id+'/'+contest_slug+'/');
+  console.log(discussSocket)
+  $('#DiscussTab').load("/contest/janatahack-cross-sell-prediction/discussions/None/")
+}
+
+function showMentors(obj) {
+  console.log("inside mentors")
+  var loader = document.getElementById('av-api-response-loader');
+  loader.style.display = "block";
+  $('#MentorshipTab').load("/contest/janatahack-cross-sell-prediction/superpro-approved-listing-page/1/")
+}
+
+function showLeaderboard(obj) {
+  var loader = document.getElementById('av-api-response-loader');
+  loader.style.display = "block";
+  
+    var contest_slug = "janatahack-cross-sell-prediction"
+    leaderboardSocket = new WebSocket(((window.location.protocol === 'https:') ? 'wss://' : 'ws://')+window.location.host+'/ws/leaderboard/'+contest_slug+'/');
+    console.log("Contest has not expired, so Public leaderboard is called")
+    console.log(leaderboardSocket)
+    $('#LeaderBoard').load( "/contest/janatahack-cross-sell-prediction/lb/1/")
+  
+}
+
+// <!--Check if following function is being used. Remove if not-->
+// <!--function page_reload(argument) {-->
+// <!--  window.location.reload();-->
+// <!--}-->
+
+// <!--function preference_selector(){-->
+// <!--  var checkboxes = document.getElementsByName('preference');-->
+// <!--  var slugs = [];-->
+// <!--  for (var i=0; i<checkboxes.length; i++) {-->
+// <!--     // And stick the checked ones onto an array...-->
+// <!--     if (checkboxes[i].checked) {-->
+// <!--        slugs.push(checkboxes[i].value);-->
+// <!--     }-->
+// <!--  }-->
+// <!--  var slug = {"slugs":slugs,-->
+// <!--                "csrfmiddlewaretoken":"lKEtG85rBPwCjJZ6HTzX5TFxJNvSOcCVVdKVoOG4U13jJrntOm1cQd3zfVBjADTX"-->
+// <!--                };-->
+
+// <!--  $.ajax({-->
+// <!--   type : 'POST',-->
+// <!--   url : '/contest/bulkparticipate/',-->
+// <!--   dataType : 'json',-->
+// <!--   data : slug,-->
+// <!--   success : function(data){-->
+// <!--    if (data["error"]){-->
+// <!--            $("#similarcontests").modal("hide");-->
+// <!--            $("#modal-header1").html("Error");-->
+// <!--            $("#modal-body").html("Please complete your profile.");-->
+// <!--            $('#myModal').modal('show');-->
+// <!--         }-->
+// <!--        else{-->
+// <!--          if(data["not_registered"].length != 0){-->
+// <!--          $("#similarcontests").modal("hide");-->
+// <!--            $("#modal-header1").html("Error");-->
+// <!--            $("#modal-body").html("Please try to register \-->
+// <!--                                   again after updating your profile \-->
+// <!--                                   for "+data["not_registered"]);-->
+// <!--            $('#myModal').modal('show');-->
+// <!--          }-->
+// <!--          else{-->
+// <!--          window.location.reload();-->
+// <!--        }-->
+// <!--          }-->
+// <!--   }-->
+// <!-- });-->
+// <!--}-->
+var purpose = $('#purpose').attr('value');
+var sp_purpose = ['visualize','excel'];
+var cd_purpose = ['workshop','normal','learnup','practice','case_study','mcq','hiring'];
+var lb_purpose = ['normal','practice','hiring'];
+
+if ($.inArray(purpose, cd_purpose ) > -1)
+{
+  $(document).ready(function(){
+  $.ajax({
+    type: "GET",
+    url: "./countdowns/",
+    success: function(result){
+
+      obj = JSON.parse(result)
+      if (obj.time_to_start > 0){
+        var time_remaining = obj.time_to_start;
+        message = "<div class='mckinsey-data-status'><span class='text-uppercase'>starts in</span></div>";
+      }
+      else if (obj.time_to_end > 0){
+        message = "<div class='mckinsey-data-status'><span class='text-uppercase'> ends in </span></div>";
+        var time_remaining = obj.time_to_end;
+      }
+
+      if (time_remaining ){
+      window.setInterval(function(){
+
+          time_remaining =  time_remaining - 1
+          if (time_remaining==0){
+            location.reload(true);
+          }
+          days = (Math.floor(time_remaining/86400));
+          hours = (Math.floor((time_remaining-days*86400)/3600));
+          minutes = (Math.floor((time_remaining % 3600)/60));
+          seconds = (Math.floor(time_remaining%60));
+          if (days < 1)
+          {
+            <!-- message_text = message + hours + "<small>hours</small>: " + minutes + "<small>minutes</small>: " + seconds  + "<small>seconds</small>"; -->
+            message_text = message + "<p>"
+              + "<span>" + hours + " <span>hours</span> </span>"
+              + "<span>" + minutes + " <span>min</span> </span>"
+              + "<span>" + seconds + " <span>sec</span> </span>"
+            + "</p>";
+          }
+          else{
+            <!-- message_text = message + days + "<small>days</small>: "  + hours + "<small>hours</small>: " + minutes + "<small>minutes</small>: " + seconds  + "<small>seconds</small>"; -->
+            message_text = message + "<p>"
+                + "<span>" + days + "<span>days</span> </span>"
+                + "<span>" + hours + " <span>hours</span> </span>"
+                + "<span>" + minutes + " <span>min</span> </span>"
+                <!-- + "<span>" + seconds + "  <span>sec</span> </span>" -->
+              + "</p>";
+          }
+          $("#countdown-timer").html( "<center>" + message_text + "</center>" );
+      }, 1000);
+      }
+
+    }
+  });
+});
+
+}
+
+if ($.inArray(purpose, sp_purpose ) > -1)
+{
+  $("#submit").click(function(){
+  var data = new FormData($('#form-submissions').get(0));
+  $.ajax({
+      url: '/problem/janatahack-cross-sell-prediction/update-final-solution/',
+      type: 'POST',
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function(data) {
+         if(data["error"] == "true")
+         {
+            $("#myModal3").modal("hide");
+            $("#modal-header1").html("Error");
+            $("#modal-body").html(data["message"]);
+            $('#myModal').modal('show');
+         }
+         else{
+             $("#myModal3").modal("hide");
+             $("#modal-header1").html("Success");
+             $("#modal-body1").html("Your Final Sumbission has been set successfully.");
+             $('#myModal1').modal('show');
+         }
+      },
+      error : function(data){
+            $("#myModal3").modal("hide");
+            $("#modal-body").html("Unable to connect to backend");
+            $('#myModal').modal('show');
+      }
+  });
+});
+
+$("#submit_2").click(function(){
+  var data = new FormData($('#form-submissions').get(0));
+  $.ajax({
+      url: '/problem/janatahack-cross-sell-prediction/update-multiple-final-solution/',
+      type: 'POST',
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function(data) {
+         if(data["error"] == "true")
+         {
+            $("#myModal3").modal("hide");
+            $("#modal-header1").html("Error");
+            $("#modal-body").html(data["message"]);
+            $('#myModal').modal('show');
+         }
+         else{
+            $("#myModal3").modal("hide");
+            $("#modal-header1").html("Success");
+            $("#modal-body1").html(data["message"]);
+            $("#myModal1").modal('show');         
+         }
+      },
+      error : function(data){
+            $("#myModal3").modal("hide");
+            $("#modal-body").html("Some error occured");
+            $('#myModal').modal('show');
+      }
+  });
+});
+
+}
+else{
+  $("#selection_done").click(function(){
+  var message = "Are you sure you want to set this submission as your final submission. If yes, then you'll have to add your code file for this submission. ";
+  var user_confirmation  = confirm(message);
+  if (user_confirmation)
+  {
+     add_code_file_form();
+  }
+
+});
+$("#submit").click(function(){
+  var data = new FormData($('#form-submissions').get(0));
+  $.ajax({
+      url: '/problem/janatahack-cross-sell-prediction/update-final-solution/',
+      type: 'POST',
+      data: data,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function(data) {
+         if(data["error"] == "true")
+         {
+            $("#myModal3").modal("hide");
+            $("#modal-header1").html("Error");
+            $("#modal-body").html(data["message"]);
+            $('#myModal').modal('show');
+         }
+         else{
+             <!-- fetch_final_for_multiple_selections(); -->
+             $("#myModal3").modal("hide");
+             $("#modal-header1").html("Success");
+             $("#modal-body1").html(data["message"]);
+             $('#myModal1').modal('show');
+         }
+      },
+      error : function(data){
+            $("#myModal3").modal("hide");
+            $("#modal-body").html("Unable to connect to backend");
+            $('#myModal').modal('show');
+      }
+  });
+});
+
+function add_code_file_form(){
+    $("#myModal3 .modal-dialog").css("height",$(window).height()*0.7);
+    $("#myModal3 .modal-dialog").css("width",$(window).width()*0.7);
+}
+
+}
+
+   var names;
+
+    $("#sub2").click(function(){
+         file_checker("url2");
+     });
+
+   $(document).keypress(function(e) {
+       if(e.which == 13) {
+          e.preventDefault();
+          file_checker();
+       }
+   });
+
+
+
+
+
+
+
+$(document).ready(function(){
+       var height = $("#main_content").height();
+       $("#left_side_bar").height(height);
+});
+
+
+</script>
+
+
+    <script src="./Janatahack_ Cross-sell Prediction_files/platform.js.download" async="" defer="" gapi_processed="true"></script>
+    <script type="text/javascript" src="./Janatahack_ Cross-sell Prediction_files/events.js.download" defer=""></script>
+
+    <script src="./Janatahack_ Cross-sell Prediction_files/slick.min.js.download"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.av-slick-testiminials').slick({
+          infinite: true,
+          dots: false,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true
+              }
+            }
+          ]
+
+        });
+
+        // Slider custom control
+        $('.prev').click(function(){
+          $('.av-slick-testiminials').slick('slickPrev');
+        })
+
+        $('.next').click(function(){
+          $('.av-slick-testiminials').slick('slickNext');
+        })
+      });
+
+    </script>
+
+
+<!-- AV FEEDBACK HTML -->
+<div class="av-feedback-form" id="avFeedbackFrom">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Feedback</h4>
+        <h6>We believe in making Analytics Vidhya the best experience possible for Data Science enthusiasts.
+          Help us by providing valuable Feedback.</h6>
+          <div class="form-group">
+            <label for="avFeedbackField"><small>Type your feedback <em class="text-danger">*</em></small></label>
+            <textarea class="form-control" id="avFeedbackField" rows="3"></textarea>
+            <p class="text-danger" id="errorMessage"><small></small></p>
+            <p class="text-success" id="successMessage"><small></small></p>
+          </div>
+      </div>
+      <button type="submit" class="btn text-white px-4 av-btn" onclick="submitFeedback(this)">Submit</button>
+    </div>
+</div>
+<script type="application/javascript" src="./Janatahack_ Cross-sell Prediction_files/app.js.download" async=""></script>
+<script>
+    var truepush = window.truepush || [];
+    truepush.push(function(){
+      truepush.Init({
+        id: "5f2bb0b5ac054908825eb0be"
+      },
+        function(error){
+        if(error) console.log(error);
+      })
+    })
+</script>
+
+<script>
+
+  function submitFeedback(obj) {
+    var avTextField = $('#avFeedbackField').val();
+    if(avTextField == "") {
+     $('#errorMessage').html('Please enter a description.')
+
+    }
+    else
+    {
+      let url = "/post_feedback/"
+      var data = {
+        "comment": avTextField
+      };
+
+
+      $.ajax({
+           url: url,
+           type: 'POST',
+           data: JSON.stringify(data),
+           dataType: "json",
+           contentType: 'application/json',
+           success: function(data) {
+              if (data["success"]) {
+                $('#errorMessage').html('')
+                $('#successMessage').html('Thanks for your valuable feedback. It will help us make the platform bug-free and more useful for you and other users in the community.')
+                $('#avFeedbackField').val('').empty();
+              }
+
+           },
+           error : function(err){
+             if (data["error"]) {
+                $('#errorMessage').html('Please enter a description.')
+                $('#successMessage').html('')
+             }
+           }
+
+       });
+     }
+
+  }
+
+</script>
+
+<iframe id="cm_iframe" height="0" width="0" src="./Janatahack_ Cross-sell Prediction_files/cm.html" style="display: none; visibility: hidden;"></iframe><div>
+<div class="truepush_optin_notifications">
+
+</div>
+</div></body></html>

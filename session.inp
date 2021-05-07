@@ -1,0 +1,31 @@
+# Log started 2020-09-20 20:26
+# Record of session commands.  Please note that this will
+# likely require editing if it is to be run as a script.
+open "C:\Users\Salmaan Ahmed Ansari\Downloads\data2\sell pred\train.csv"
+dummify Gender
+rename 13 male
+rename 14 female
+dummify Vehicle_Age
+dummify Vehicle_Damage
+rename 18 DVehicle_Damage_1_yes
+rename 19 DVehicle_Damage_2_no
+# model 1
+logit Response 0 id Gender Age Driving_License Region_Code \
+  Previously_Insured Annual_Premium Policy_Sales_Channel Vintage male \
+  female DVehicle_Age_1 DVehicle_Age_2 DVehicle_Age_3 \
+  DVehicle_Damage_1_yes DVehicle_Damage_2_no
+# model 2
+logit Response 0 id Gender Age Driving_License Region_Code \
+  Previously_Insured Annual_Premium Policy_Sales_Channel male female \
+  DVehicle_Age_1 DVehicle_Age_2 DVehicle_Age_3 DVehicle_Damage_1_yes \
+  DVehicle_Damage_2_no
+# model 3
+logit Response 0 Gender Age Driving_License Region_Code \
+  Previously_Insured Annual_Premium Policy_Sales_Channel male female \
+  DVehicle_Age_1 DVehicle_Age_2 DVehicle_Age_3 DVehicle_Damage_1_yes \
+  DVehicle_Damage_2_no
+# model 4
+logit Response 0 Gender Age Driving_License Previously_Insured \
+  Annual_Premium Policy_Sales_Channel male female DVehicle_Age_1 \
+  DVehicle_Age_2 DVehicle_Age_3 DVehicle_Damage_1_yes \
+  DVehicle_Damage_2_no
